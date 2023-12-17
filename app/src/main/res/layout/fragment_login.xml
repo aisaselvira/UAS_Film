@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".LoginFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login2"
+            android:fontFamily="@font/poppinssemibold"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:textSize="14sp"
+            android:inputType="text"
+            android:hint="Email"
+            android:paddingLeft="20sp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppinsregular"
+            android:background="@drawable/rounded" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"/>
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:textSize="14sp"
+            android:inputType="textPassword"
+            android:hint="@string/password"
+            android:paddingLeft="20sp"
+            android:fontFamily="@font/poppinsregular"
+            android:background="@drawable/rounded"
+            android:layout_marginTop="15dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingRight="60dp"
+                android:text="@string/rememberme"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppinsregular"
+                android:buttonTint="@android:color/darker_gray"/>
+
+            <TextView
+                android:id="@+id/forgetPasswordText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/forgetpw"
+                android:textSize="10sp"
+                android:fontFamily="@font/poppinsregular"
+                android:textColor="@color/white"
+                android:paddingLeft="60dp"
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkbox"
+            android:text="@string/login2"
+            android:layout_marginTop="30dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppinsmedium"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/purple"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/alreadyaccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/newmember"
+                android:fontFamily="@font/poppinsregular"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/regsiter2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/regis"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppinsregular"
+                android:textColor="@color/white"
+                android:layout_marginLeft="8dp"/>
+            />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">TIX ID</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="rememberme">Remember Me</string>
+    <string name="forgetpw">Forget Password ?</string>
+    <string name="login2">Login</string>
+    <string name="newmember">New Member?</string>
+    <string name="regis">Register</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="checking">By checking the box you agree to our </string>
+    <string name="terms">Terms </string>
+    <string name="and">and </string>
+    <string name="conditions">Conditions</string>
+    <string name="homepage">Homepage</string>
+    <string name="welcome">Welcome</string>
+    <string name="your">Your</string>
+    <string name="hasbeen">has been activated</string>
+    <string name="email2">email</string>
+    <string name="phone2">phone</string>
+    <string name="your2">Your</string>
+    <string name="hasbeen2">has been registered</string>
+    <string name="readyAccount">Already Have an Account?</string>
+    <string name="sinopsis">Dalam film Lucasfilm Star Wars: The Last Jedi, kisah keluarga Skywalker diteruskan ketika para pahlawan
+        The Force Awakens bergabung dengan para legenda galaksi dalam sebuah petualangan mencengangkan untuk menguak kunci misteri
+        lintas zaman mengenai the Force.</string>
+
+</resources>

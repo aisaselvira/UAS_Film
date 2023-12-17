@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "188350166218",
+    "project_id": "uasfilmapp",
+    "storage_bucket": "uasfilmapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188350166218:android:001318d89f81c17da07033",
+        "android_client_info": {
+          "package_name": "com.example.uas_film"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfqpJJObTGKoZIdBKx9oCETdc1sm1tWAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
