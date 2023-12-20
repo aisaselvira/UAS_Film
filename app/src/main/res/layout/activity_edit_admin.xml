@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_crudd"
     android:fillViewport="true"
     tools:context=".EditAdminActivity"
     >
@@ -19,6 +20,7 @@
             android:padding="6dp"
             android:background="@color/blue2"
             android:orientation="horizontal">
+
 
             <ImageView
                 android:id="@+id/button_back"
@@ -48,10 +50,47 @@
             android:paddingLeft="35dp"
             android:paddingRight="35dp">
 
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/adminListAddImage"
+                android:layout_width="190dp"
+                android:layout_height="230dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true">
+
+                <ImageView
+                    android:id="@+id/imgViewEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/defaultimg" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/btn_choose_image"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/red"
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:paddingStart="16dp"
+                android:text="Choose Image"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Title :"
+                android:textColor="@color/white"
                 android:fontFamily="@font/poppinssemibold"
                 android:textSize="16dp"
                 android:layout_marginBottom="10dp" />
@@ -71,6 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Director :"
+                android:textColor="@color/white"
                 android:fontFamily="@font/poppinssemibold"
                 android:textSize="16dp"
                 android:layout_marginBottom="10dp"
@@ -91,6 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Writter :"
+                android:textColor="@color/white"
                 android:fontFamily="@font/poppinssemibold"
                 android:textSize="16dp"
                 android:layout_marginTop="20dp"
@@ -111,6 +152,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rating :"
+                android:textColor="@color/white"
                 android:fontFamily="@font/poppinssemibold"
                 android:textSize="16dp"
                 android:layout_marginTop="20dp"
@@ -131,6 +173,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sinopsis :"
+                android:textColor="@color/white"
                 android:fontFamily="@font/poppinssemibold"
                 android:textSize="16dp"
                 android:layout_marginTop="20dp"
@@ -147,58 +190,17 @@
                 android:background="@drawable/rounded"
                 android:fontFamily="@font/poppinsregular" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/adminListAddImage"
-                    android:layout_width="170dp"
-                    android:layout_height="170dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardUseCompatPadding="true">
-
-                    <ImageView
-                        android:id="@+id/imgViewEdit"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="fitXY"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/defaultimg" />
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <Button
-                    android:id="@+id/btn_choose_image"
-                    android:layout_width="160dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppinsmedium"
-                    android:backgroundTint="@color/red"
-                    android:drawablePadding="8dp"
-                    android:paddingStart="16dp"
-                    android:text="Choose Image" />
-            </LinearLayout>
-
             <Button
                 android:id="@+id/btn_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Update"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
                 android:textSize="14sp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/poppinsmedium"
-                android:backgroundTint="@color/blue2"
+                android:backgroundTint="@color/red"
                 />
 
         </LinearLayout>

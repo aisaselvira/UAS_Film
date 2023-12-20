@@ -14,7 +14,7 @@ import com.google.firebase.database.ValueEventListener
 
 class HomeAdminActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeAdminBinding
-    private lateinit var itemAdapter: FilmAdminAdapter
+    private lateinit var itemAdapter: FilmAdapter
     private lateinit var itemList: ArrayList<FilmAdminData>
     private lateinit var recyclerViewItem : RecyclerView
 
@@ -30,7 +30,7 @@ class HomeAdminActivity : AppCompatActivity() {
         recyclerViewItem.layoutManager = LinearLayoutManager(this)
 
         itemList = arrayListOf()
-        itemAdapter = FilmAdminAdapter(itemList)
+        itemAdapter = FilmAdapter(itemList)
         recyclerViewItem.adapter = itemAdapter
 
         binding.btnPlusAdmin.setOnClickListener{

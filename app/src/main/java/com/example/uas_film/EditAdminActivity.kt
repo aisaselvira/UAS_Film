@@ -14,13 +14,13 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
-import java.util.UUID
 
 class EditAdminActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditAdminBinding
     private lateinit var database: DatabaseReference
     private lateinit var storageReference: StorageReference
-    private lateinit var imageUri: Uri
+    private var imageUri: Uri? = null
+    private var originalImageId: String? = null
 
     private val getContent =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
@@ -45,6 +45,7 @@ class EditAdminActivity : AppCompatActivity() {
         val rating = binding.txtRatingEdit
         val sinopsis = binding.txtSinopsisEdit
 
+        originalImageId = Uri.parse(intent.getStringExtra("imgId")).lastPathSegment?.removePrefix("images/")
         val originalImageUrl = intent.getStringExtra("imgId")
         Glide.with(this)
             .load(originalImageUrl)
@@ -73,11 +74,8 @@ class EditAdminActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().getReference("Film")
 
         if (imageUri != null) {
-            // Generate a unique ID for the image
-            val imageId = UUID.randomUUID().toString()
-
-            // Upload image to Firebase Storage with the generated ID
-            storageReference = FirebaseStorage.getInstance().reference.child("images/$imageId")
+            // Jika ada gambar yang dipilih, upload gambar baru
+            storageReference = FirebaseStorage.getInstance().reference.child("images/$originalImageId")
             val uploadTask: UploadTask = storageReference.putFile(imageUri)
 
             uploadTask.addOnSuccessListener {
@@ -91,17 +89,11 @@ class EditAdminActivity : AppCompatActivity() {
                         updatedSinopsis,
                         imageUrl.toString()
                     )
-                    database.child(imageId).setValue(item)
+                    database.child(originalImageId!!).setValue(item)
                         .addOnCompleteListener {
+                            clearFieldsAndNavigateToHome()
                             // Handle completion, e.g., show a success message
                             Toast.makeText(this, "Data Uploaded Successfully", Toast.LENGTH_SHORT).show()
-
-                            // Start HomeAdminActivity after successful update
-                            val intent = Intent(this, HomeAdminActivity::class.java)
-                            startActivity(intent)
-
-                            // Finish current activity
-                            finish()
                         }
                         .addOnFailureListener {
                             Toast.makeText(this, "Adding Data Failed!", Toast.LENGTH_SHORT).show()
@@ -111,9 +103,7 @@ class EditAdminActivity : AppCompatActivity() {
                 Toast.makeText(this, "Image Upload Failed!", Toast.LENGTH_SHORT).show()
             }
         } else {
-            // If no new image is selected, update the data without uploading a new image
-            val imageId = intent.getStringExtra("imgId")!!
-
+            // Jika tidak ada gambar yang dipilih, update data tanpa mengganti gambar
             val updatedList = mapOf(
                 "title" to updatedTitle,
                 "director" to updatedDirector,
@@ -122,22 +112,26 @@ class EditAdminActivity : AppCompatActivity() {
                 "sinopsis" to updatedSinopsis
             )
 
-            // Update the data with the new title
-            database.child(imageId).updateChildren(updatedList)
+            // Update the data with the new values
+            database.child(originalImageId!!).updateChildren(updatedList)
                 .addOnCompleteListener {
+                    clearFieldsAndNavigateToHome()
                     // Handle completion, e.g., show a success message
                     Toast.makeText(this, "Data Updated Successfully", Toast.LENGTH_SHORT).show()
-
-                    // Start HomeAdminActivity after successful update
-                    val intent = Intent(this, HomeAdminActivity::class.java)
-                    startActivity(intent)
-
-                    // Finish current activity
-                    finish()
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, "Updating Data Failed!", Toast.LENGTH_SHORT).show()
                 }
         }
+    }
+
+    private fun clearFieldsAndNavigateToHome() {
+        binding.txtTitleEdit.text!!.clear()
+        binding.txtDirectorEdit.text!!.clear()
+        binding.txtWritterEdit.text!!.clear()
+        binding.txtRatingEdit.text!!.clear()
+        binding.txtSinopsisEdit.text!!.clear()
+        startActivity(Intent(this, HomeAdminActivity::class.java))
+        finish()
     }
 }

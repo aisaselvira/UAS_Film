@@ -10,38 +10,42 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 
-class FilmAdminAdapter(private val filmAdminList: ArrayList<FilmAdminData>) : RecyclerView.Adapter<FilmAdminAdapter.FilmAdminViewHolder>() {
+class FilmAdapter(private val filmAdminList: ArrayList<FilmAdminData>) : RecyclerView.Adapter<FilmAdapter.FilmViewHolder>() {
 
-    class FilmAdminViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    override fun getItemCount(): Int {
+        return filmAdminList.size
+    }
+
+    class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.title_film)
         val director: TextView = itemView.findViewById(R.id.director_film)
         val writer: TextView = itemView.findViewById(R.id.writer_film)
         val rating: TextView = itemView.findViewById(R.id.rating_film)
-        val sinopsis: TextView = itemView.findViewById(R.id.sinopsis_film)
         val image: ImageView = itemView.findViewById(R.id.image_film)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmAdminViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_film, parent, false)
-        return FilmAdminViewHolder(itemView)
+        return FilmViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: FilmAdminViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FilmViewHolder, position: Int) {
         val currentItem = filmAdminList[position]
         holder.title.setText(currentItem.title)
         holder.director.setText(currentItem.director)
         holder.writer.setText(currentItem.writter)
         holder.rating.setText(currentItem.rating)
-        holder.sinopsis.setText(currentItem.sinopsis)
 
-        holder.title.text = currentItem.title
         // Use Glide or Picasso to load the image from the URL into the ImageView
         Glide.with(holder.itemView.context)
             .load(currentItem.imageUrl)
+            .skipMemoryCache(true) // Skip caching in memory
+            .diskCacheStrategy(DiskCacheStrategy.NONE) // Skip caching on disk
             .into(holder.image)
 
         holder.itemView.findViewById<ImageButton>(R.id.btn_edit).setOnClickListener{
@@ -52,7 +56,7 @@ class FilmAdminAdapter(private val filmAdminList: ArrayList<FilmAdminData>) : Re
             intent.putExtra("writter", currentItem.writter)
             intent.putExtra("rating", currentItem.rating)
             intent.putExtra("sinopsis", currentItem.sinopsis)
-            intent.putExtra("imageUrl", currentItem.imageUrl)
+            intent.putExtra("imgId", currentItem.imageUrl)
             holder.itemView.context.startActivity(intent)
         }
 
@@ -91,8 +95,4 @@ class FilmAdminAdapter(private val filmAdminList: ArrayList<FilmAdminData>) : Re
         }
     }
 
-
-
-
-    override fun getItemCount() = filmAdminList.size
 }

@@ -10,9 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.uas_film.databinding.FragmentLoginBinding
-import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
 
 class LoginFragment : Fragment() {
 
@@ -35,6 +33,11 @@ class LoginFragment : Fragment() {
         sharedPreferences = requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
         with(binding) {
+            // Menetapkan listener untuk checkbox
+            checkbox.setOnCheckedChangeListener { _, isChecked ->
+                checkbox.isChecked = isChecked
+            }
+
             loginBtn.setOnClickListener {
                 val email = email.text.toString()
                 val password = pass.text.toString()
