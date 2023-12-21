@@ -32,8 +32,8 @@ class LoginRegisterActivity : AppCompatActivity() {
             binding.viewPagerLogreg.adapter = adapter
             TabLayoutMediator(binding.tabLayoutLogreg, binding.viewPagerLogreg) { tab, position ->
                 tab.text = when (position) {
-                    0 -> "Login"
-                    1 -> "Register"
+                    0 -> "Sign In"
+                    1 -> "Sign Up"
                     else -> "Invalid"
                 }
             }.attach()

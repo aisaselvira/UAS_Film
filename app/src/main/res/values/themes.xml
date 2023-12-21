@@ -5,5 +5,15 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.UAS_Film" parent="Base.Theme.UAS_Film" />
+    <style name="Base.Theme.UAS_Film.WithActionBar"
+        parent="Theme.Material3.DayNight">
+        <item name="android:fontFamily">@font/poppinssemibold</item>
+        <item name="android:color">@color/white</item>
+        <item name="android:popupMenuStyle">@style/MyPopupMenuStyle</item>
+    </style>
+
+    <!-- Define a custom style for the popup menu -->
+    <style name="MyPopupMenuStyle" parent="Widget.Material3.PopupMenu">
+        <item name="android:popupBackground">@color/youngpurple2</item>
+    </style>
 </resources>

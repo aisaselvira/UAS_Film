@@ -9,6 +9,7 @@
     android:background="@drawable/bg_crudd"
     tools:context=".HomeAdminActivity">
 
+
     <LinearLayout
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,20 +17,7 @@
         android:id="@+id/homeAdminLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="6dp"
-        android:background="@color/blue2"
         android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="List Movie"
-            android:layout_gravity="center"
-            android:fontFamily="@font/poppinssemibold"
-            android:textColor="@color/white"
-            android:paddingLeft="160dp"
-            android:paddingTop="5dp"
-            android:textSize="18dp"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

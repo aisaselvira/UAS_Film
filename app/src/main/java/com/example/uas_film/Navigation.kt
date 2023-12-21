@@ -18,7 +18,7 @@ class Navigation : AppCompatActivity() {
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> replaceFragment(HomeFragment())
-                R.id.nav_favorite -> replaceFragment(HomeFragment())
+                R.id.nav_favorite -> replaceFragment(FavoriteFragment())
                 R.id.nav_profile -> replaceFragment(ProfileFragment())
             }
             true
