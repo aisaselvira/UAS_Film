@@ -1,4 +1,4 @@
-package com.example.uas_film
+package com.example.uas_film.Model
 
 data class Account(
     var email: String ="",

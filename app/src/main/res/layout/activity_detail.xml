@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_fourth"
     android:orientation="vertical"
-    tools:context=".DetailActivity">
+    tools:context=".Activity.DetailActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -257,22 +257,14 @@
         android:fontFamily="@font/poppinsregular"
         android:textColor="@color/white"/>
 
-    <ImageView
-        android:id="@+id/favorite_imgview"
+    <ImageButton
+        android:id="@+id/btn_fav"
         android:layout_width="40dp"
-        android:layout_marginStart="350dp"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="360dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
-        android:src="@drawable/ic_favorite" />
-
-    <TextView
-        android:id="@+id/txt_favorite"
-        android:layout_width="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginStart="335dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Favorite" />
+        android:src="@drawable/favorite_hearth" />
 
 </LinearLayout>

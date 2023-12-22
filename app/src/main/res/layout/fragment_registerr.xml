@@ -7,7 +7,7 @@
     android:background="@drawable/bg_register"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".RegisterrFragment">
+    tools:context=".Fragment.RegisterrFragment">
 
     <LinearLayout
         android:layout_width="377dp"
@@ -116,7 +116,6 @@
                 android:padding="2sp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/poppinsregular"
-                android:buttonTint="@android:color/darker_gray"
                 />
             <TextView
                 android:layout_width="wrap_content"

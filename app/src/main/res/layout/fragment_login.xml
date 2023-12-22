@@ -7,7 +7,7 @@
     android:background="@drawable/bg_login"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".LoginFragment">
+    tools:context=".Fragment.LoginFragment">
 
     <LinearLayout
         android:layout_width="wrap_content"

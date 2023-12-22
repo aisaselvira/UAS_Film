@@ -1,9 +1,13 @@
-package com.example.uas_film
+package com.example.uas_film.Activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.uas_film.Fragment.FavoriteFragment
+import com.example.uas_film.Fragment.HomeFragment
+import com.example.uas_film.Fragment.ProfileFragment
 import com.example.uas_film.databinding.ActivityNavigationBinding
+import com.example.uas_film.R
 
 class Navigation : AppCompatActivity() {
     private lateinit var binding: ActivityNavigationBinding
@@ -28,4 +32,5 @@ class Navigation : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout, fragment).commit()
     }
+
 }

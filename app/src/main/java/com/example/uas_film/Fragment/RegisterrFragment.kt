@@ -1,4 +1,4 @@
-package com.example.uas_film
+package com.example.uas_film.Fragment
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -16,6 +16,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
+import com.example.uas_film.Activity.HomeAdminActivity
+import com.example.uas_film.Activity.MainActivity
+import com.example.uas_film.Activity.Navigation
+import com.example.uas_film.Model.Account
+import com.example.uas_film.R
 import com.example.uas_film.databinding.FragmentRegisterrBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -57,7 +62,7 @@ class RegisterrFragment : Fragment() {
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 // Save user data to Firestore
-                                val newAccount = Account(email, username, password, "user")
+                                val newAccount = Account(email, username, password, phone,"user")
                                 saveUserDataToFirestore(newAccount)
 
                                 // Save login status to SharedPreferences
@@ -129,20 +134,24 @@ class RegisterrFragment : Fragment() {
         }
     }
 
-    private fun saveUserDataToFirestore(account: Account) {
-        firestore.collection("accounts")
-            .add(account)
-            .addOnSuccessListener { documentReference ->
-                Log.d("RegisterrFragment", "DocumentSnapshot added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                Log.e("RegisterrFragment", "Error adding document to Firestore", e)
-                Toast.makeText(
-                    requireContext(),
-                    "Error adding document to Firestore: ${e.message}",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
+    private fun saveUserDataToFirestore(akun: Account) {
+        val userId = firebaseAuth.currentUser?.uid
+        userId?.let { uid ->
+            firestore.collection("account")
+                .document(uid)
+                .set(akun) // Menggunakan set() untuk menggantikan add() agar dapat menggunakan UID sebagai ID dokumen
+                .addOnSuccessListener {
+                    Log.d("RegisterFragment", "DocumentSnapshot added with ID: $uid")
+                }
+                .addOnFailureListener { e ->
+                    Log.e("RegisterFragment", "Error adding document to Firestore", e)
+                    Toast.makeText(
+                        requireContext(),
+                        "Error adding document to Firestore: ${e.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+        }
     }
 
     private fun saveLoginStatus(isLoggedIn: Boolean) {
@@ -161,4 +170,5 @@ class RegisterrFragment : Fragment() {
         startActivity(intent)
         requireActivity().finish()
     }
+
 }

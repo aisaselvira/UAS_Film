@@ -14,7 +14,7 @@
         android:theme="@style/Theme.UAS_Film"
         tools:targetApi="31">
         <activity
-            android:name=".SplashScreen"
+            android:name=".Activity.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,32 +22,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:exported="false"></activity>
         <activity
-            android:name=".LoginRegisterActivity"
+            android:name=".Activity.LoginRegisterActivity"
             android:exported="false"></activity>
         <activity
-            android:name=".Navigation"
+            android:name=".Activity.Navigation"
             android:exported="false"></activity>
         <activity
-            android:name=".HomeAdminActivity"
+            android:name=".Activity.HomeAdminActivity"
             android:exported="true"
             android:theme="@style/Base.Theme.UAS_Film.WithActionBar"></activity>
         <activity
-            android:name=".ProfileFragment"
+            android:name=".Fragment.ProfileFragment"
             android:exported="false"></activity>
         <activity
-            android:name=".DetailActivity"
+            android:name=".Activity.DetailActivity"
             android:exported="false"></activity>
         <activity
-            android:name=".HomeFragment"
+            android:name=".Fragment.HomeFragment"
             android:exported="false"></activity>
         <activity
-            android:name=".EditAdminActivity"
+            android:name=".Activity.EditAdminActivity"
             android:exported="false"></activity>
         <activity
-            android:name=".FilmAdminAdd"
+            android:name=".Activity.FilmAdminAdd"
             android:exported="true"></activity>
     </application>
 

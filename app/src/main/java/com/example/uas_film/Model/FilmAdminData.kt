@@ -1,4 +1,4 @@
-package com.example.uas_film
+package com.example.uas_film.Model
 
 import java.io.Serializable
 

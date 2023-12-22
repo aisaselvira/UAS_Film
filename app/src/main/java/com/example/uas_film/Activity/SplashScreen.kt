@@ -1,9 +1,10 @@
-package com.example.uas_film
+package com.example.uas_film.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.uas_film.R
 
 class SplashScreen : AppCompatActivity() {
     private val SPLASH_DISPLAY_LENGTH = 3000

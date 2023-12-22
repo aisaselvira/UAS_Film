@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/bg_crudd"
-    tools:context=".HomeAdminActivity">
+    tools:context=".Activity.HomeAdminActivity">
 
 
     <LinearLayout
@@ -40,6 +40,6 @@
         android:layout_height="50dp"
         android:layout_marginRight="20dp"
         android:layout_gravity="end"
-        android:background="@drawable/baseline_add_circle_24"/>
+        android:background="@drawable/baseline_add_box_24"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

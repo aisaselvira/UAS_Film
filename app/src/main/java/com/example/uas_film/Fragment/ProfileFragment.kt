@@ -1,4 +1,4 @@
-package com.example.uas_film
+package com.example.uas_film.Fragment
 
 import android.content.Context
 import android.content.Intent
@@ -10,6 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.uas_film.Activity.LoginRegisterActivity
+import com.example.uas_film.Model.Account
 import com.example.uas_film.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -48,16 +50,16 @@ class ProfileFragment : Fragment() {
     private fun loadUserData() {
         val userId = firebaseAuth.currentUser?.uid
         userId?.let { uid ->
-            firestore.collection("accounts")
+            firestore.collection("account")
                 .document(uid)
                 .get()
                 .addOnSuccessListener { document ->
                     val account = document.toObject(Account::class.java)
                     account?.let {
                         // Set the values to corresponding TextViews
-                        binding.usernameProfile.text = "Username: ${it.username}"
-                        binding.emailProfile.text = "Email: ${it.email}"
-                        binding.phoneProfile.text = "Phone: ${it.phone}"
+                        binding.usernameProfile.text = "${it.username}"
+                        binding.emailProfile.text = "${it.email}"
+                        binding.phoneProfile.text = "${it.phone}"
                     }
                 }
                 .addOnFailureListener { e ->

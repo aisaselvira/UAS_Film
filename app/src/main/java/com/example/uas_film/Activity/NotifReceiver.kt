@@ -1,4 +1,4 @@
-package com.example.uas_film
+package com.example.uas_film.Activity
 
 import android.content.BroadcastReceiver
 import android.content.Context

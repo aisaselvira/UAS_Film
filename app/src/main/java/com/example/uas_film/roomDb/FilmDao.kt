@@ -6,7 +6,6 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.uas_film.roomDb.FilmEntity
 
 @Dao
 interface FilmDao {

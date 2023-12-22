@@ -1,4 +1,4 @@
-package com.example.uas_film
+package com.example.uas_film.Fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.uas_film.Activity.DetailActivity
+import com.example.uas_film.Adapter.FilmUserAdapter
+import com.example.uas_film.Model.FilmAdminData
 import com.example.uas_film.databinding.FragmentHomeBinding
 import com.example.uas_film.roomDb.FilmDao
 import com.example.uas_film.roomDb.FilmEntity

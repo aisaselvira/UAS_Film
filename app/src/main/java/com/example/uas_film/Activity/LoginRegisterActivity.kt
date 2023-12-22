@@ -1,10 +1,11 @@
-package com.example.uas_film
+package com.example.uas_film.Activity
 
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.uas_film.Adapter.LoginRegisAdapter
 import com.example.uas_film.databinding.ActivityLoginRegisterBinding
 import com.google.android.material.tabs.TabLayoutMediator
 

@@ -1,8 +1,10 @@
-package com.example.uas_film
+package com.example.uas_film.Adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.uas_film.Fragment.LoginFragment
+import com.example.uas_film.Fragment.RegisterrFragment
 
 class LoginRegisAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
